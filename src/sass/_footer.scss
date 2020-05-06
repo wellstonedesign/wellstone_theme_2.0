@@ -1,0 +1,95 @@
+/*
+//
+//
+//
+// フッター
+---------------------------------------------------------- */
+
+.site-footer {
+	margin-top: 80px;
+	margin-bottom: 50px;
+	padding-left: #{$width-sidebar}px;
+	border-top: 1px solid $sub-color-2;
+	&__inner {
+		padding: 40px 4% 20px;
+	}
+	&__copy {
+		margin-top: 20px;
+		color: rgba($main-color-2, .5);
+		font-size: 1.2rem;
+		text-align: center;
+	}
+	&__menu{
+		margin-top: 20px;
+		ul{
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+		}
+		ul ul {
+			display: none;
+		}
+		li{
+			list-style: none;
+			color: #aaa;
+		}
+		a{
+			padding: 0 8px;
+			color: rgba($main-color-2, .5);
+			font-size: 1.2rem;
+			text-decoration: none;
+			transition: color .4s ease;
+			&:hover{
+				color: rgba($main-color-2, .8);
+			}
+		}
+	}
+}
+
+@media screen and ( max-width: 767px ) { // スマートフォン表示
+	.site-footer {
+		margin-top: 40px;
+		padding-left: 0;
+	}
+}
+
+/*
+//
+//
+// SNSメニュー
+---------------------------------------------------------- */
+
+.sns-menu {
+	width: 200px;
+	margin: auto;
+}
+
+.sns-menu-list {
+	display: flex;
+	justify-content: center;
+
+	&__item {
+		padding: 0 8px;
+		list-style: none;
+	}
+
+	&__link {
+		display: block;
+		box-sizing: border-box;
+		width: 15px;
+		height: 15px;
+		transition: all .4s ease;
+		opacity: .7;
+		&:hover {
+			opacity: 1;
+			transform: scale(1.2);
+		}
+	}
+	&__svg {
+		width: 100%;
+		height: 100%;
+		path {
+			fill: $main-color;
+		}
+	}
+}

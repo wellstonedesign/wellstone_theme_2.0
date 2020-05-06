@@ -1,0 +1,212 @@
+/*
+//
+//
+// テンプレートスタイル共通
+---------------------------------------------------------- */
+.entry-content{
+	word-break: break-all;
+	&::after {
+		content: '';
+		display: block;
+		clear: both;
+	}
+	h2 {
+		margin-bottom: 8px;
+		margin-top: 40px;
+		padding-bottom: 4px;
+		border-bottom: 2px solid $main-color;
+		font-size: 2.4rem;
+		font-weight: 400;
+		line-height: 1.4;
+	}
+	h3 {
+		margin-top: 20px;
+		margin-bottom: 4px;
+		padding-bottom: 4px;
+		border-bottom: 1px solid rgba($main-color, .5);
+		font-size: 2rem;
+		font-weight: 400;
+	}
+	h4 {
+		font-size: 1.6rem;
+	}
+	p {
+		margin-bottom: 1em;
+		color: $text-color;
+		font-size: 1.6rem;
+		font-feature-settings: 'palt';
+		font-weight: 300;
+		line-height: 2.3;
+		letter-spacing: 0.05em;
+	}
+	img {
+		max-width: 100%;
+	}
+	figcaption {
+		color: #666;
+		font-size: .8em;
+		text-align: center;
+	}
+	a {
+		color: $main-color;
+		text-decoration: underline;
+		word-break: break-all;
+		&:hover {
+			text-decoration: none;
+		}
+	}
+	ul,
+	ol {
+		padding-left: 20px;
+	}
+	pre {
+		overflow: auto;
+	}
+	.wp-block-table {
+		table {
+			font-size: 1.4rem;
+			th,
+			td {
+				padding: 8px;
+				border: 1px solid $sub-color-2;
+			}
+			th {
+				background: #f7f7f7;
+			}
+		}
+	}
+	.wp-block-quote {
+		border-left: 4px solid #eee;
+		padding-left: 16px;
+		cite {
+			color: #999;
+			font-size: .8em;
+		}
+	}
+	.wp-block-code {
+		padding: 16px;
+		background: #f7f7f7;
+		border: 1px solid #eee;
+	}
+	.wp-block-verse {
+		padding: 32px;
+		border: 1px solid #eee;
+		font-size: 1.2em;
+	}
+	.wp-block-pullquote {
+		cite {
+			color: #999;
+			font-size: .8em;
+		}
+	}
+	.wp-block-pullquote::before {
+		background: #fff;
+		border-radius: 50%;
+		color: #999;
+		content: "”";
+		display: block;
+		font-size: 6.2rem;
+		font-weight: 500;
+		line-height: 1.2;
+		margin: 0 auto 1.5rem auto;
+		text-align: center;
+		height: 4.4rem;
+		width: 4.4rem;
+	}
+	.wp-block-button {
+		a {
+			text-decoration: none;
+		}
+	}
+	.has-small-font-size {
+		font-size: .8em;
+	}
+	.has-medium-font-size {
+		font-size: 1.2em;
+		line-height: 1.8;
+	}
+	.has-large-font-size {
+		font-size: 1.4em;
+		line-height: 1.6;
+	}
+	.has-huge-font-size {
+		font-size: 1.8em;
+		line-height: 1.4;
+	}
+	hr.wp-block-separator {
+			margin: 8rem auto;
+	}
+	hr,
+	hr.wp-block-separator.is-sytle-default {
+		position: relative;
+		overflow: visible;
+		border: none;
+		width: 20%;
+		height: 0.1rem;
+		background: #666;
+	}
+	hr.wp-block-separator.is-style-wide {
+		width: 100%;
+	}
+	hr.wp-block-separator.is-style-dots {
+		width: 100%;
+	}
+	.wp-block-search .wp-block-search__input {
+		width: auto;
+		flex-grow: 1;
+		max-width: 360px;
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		background: #fff;
+		border-radius: 0;
+		border-style: solid;
+		border-width: 0.1rem;
+		border-color: #666;
+		box-shadow: none;
+		display: block;
+		font-size: 1.6rem;
+		letter-spacing: -0.015em;
+		margin: 0;
+		max-width: 100%;
+		padding: 1.5rem 1.8rem;
+	}
+	.wp-block-search .wp-block-search__input:focus {
+		outline: none;
+	}
+	.wp-block-search .wp-block-search__button {
+		margin-left: 10px;
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		background: #333;
+		border: none;
+		border-radius: 0;
+		color: #fff;
+		cursor: pointer;
+		display: inline-block;
+		font-size: 1.5rem;
+		font-weight: 600;
+		letter-spacing: 0.0333em;
+		line-height: 1.25;
+		margin: 0;
+		opacity: 1;
+		padding: 1.1em 1.44em;
+		text-align: center;
+		text-decoration: none;
+		text-transform: uppercase;
+		transition: opacity 0.15s linear;
+	}
+}
+
+@media screen and ( max-width : 767px ) { // スマートフォン表示
+	.entry-content {
+		h2 {
+			margin-top: 32px;
+			font-size: 2.0rem;
+		}
+		h3 {
+			margin-top: 32px;
+			margin-bottom: 16px;
+			font-size: 1.6rem;
+		}
+	}
+}

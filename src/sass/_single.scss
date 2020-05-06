@@ -1,0 +1,110 @@
+/*
+//
+//
+//
+// 記事詳細
+---------------------------------------------------------- */
+
+.single-section {
+	margin-bottom: 80px;
+	padding-left: #{$width-sidebar}px;
+	&__inner {
+		max-width: 700px;
+		line-height: 1.8;
+		margin: auto;
+		padding: 0 4%;
+		font-size: 1.5rem;
+		text-align: justify;
+	}
+}
+
+@media screen and ( max-width: 767px ) { // スマートフォン表示
+	.single-section {
+		padding-left: 0;
+	}
+}
+
+.single-header {
+	&__inner {
+		margin-bottom: 40px;
+		border-bottom: 4px solid $main-color;
+	}
+	&__title {
+		margin-bottom: 8px;
+		font-size: 2.8rem;
+		font-weight: 400;
+		line-height: 1.4;
+	}
+}
+
+@media screen and ( min-width: 768px ) and ( max-width: 1023px ) { // タブレット / ポートレート表示のみ
+	.single-header {
+		&__title {
+			padding-bottom: 10px;
+			font-size: 2.4rem;
+			font-weight: 400;
+		}
+	}
+}
+
+@media screen and ( max-width: 767px ) { // スマートフォン表示
+	.single-header {
+		&__title {
+			padding-bottom: 10px;
+			font-size: 2rem;
+		}
+	}
+}
+
+.single-post {
+	&__meta-area {
+		margin-top: 40px;
+		margin-bottom: 40px;
+	}
+	&__date {
+		color: rgba($main-color-2, .5);
+		font-size: 1.2rem;
+	}
+	&__category {
+		display: inline-block;
+		margin-left: 5px;
+		li {
+			display: inline-block;
+			margin-left: 5px;
+			list-style: none;
+		}
+		a {
+			padding: 0 16px;
+			border: 1px solid $main-color;
+			color: $main-color;
+			font-size: 1.2rem;
+			text-decoration: none;
+			transition: all .4s $easeInOutCirc;
+			&:hover {
+				background: $main-color;
+				color: #fff;
+			}
+		}
+	}
+	&__tag {
+		a {
+			display: inline-block;
+			margin-right: 5px;
+			padding: 0 16px;
+			border-radius: 50px;
+			border: 1px solid $main-color;
+			color: $main-color;
+			font-size: 1.2rem;
+			text-decoration: none;
+			transition: all .4s $easeInOutCirc;
+			&:hover {
+				background: $main-color;
+				color: #fff;
+			}
+
+			&::before {
+				content: '#';
+			}
+		}
+	}
+}

@@ -1,0 +1,113 @@
+
+/*
+//
+//
+// ヘッダー
+---------------------------------------------------------- */
+
+.site-header {
+	padding-left: #{$width-sidebar}px;
+	&__inner {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		height: 200px;
+	}
+	&__description {
+		margin-top: 10px;
+		color: rgba($main-color-2, .7);
+		font-size: 1.2rem;
+		font-weight: 200;
+	}
+}
+
+@media screen and ( max-width: 767px ) { // スマートフォン表示
+	.site-header {
+		padding-left: 0;
+		&__inner {
+			height: 160px;
+		}
+	}
+}
+
+.site-logo {
+	width: 400px;
+	&__image {
+		width: 100%;
+	}
+}
+
+@media screen and ( min-width: 768px ) and ( max-width: 1023px ) { // タブレット / ポートレート表示のみ
+	.site-logo {
+		width: 300px;
+	}
+}
+
+@media screen and ( max-width: 767px ) { // スマートフォン表示
+	.site-logo {
+		width: 240px;
+	}
+}
+
+/*
+//
+//
+// スマートフォン用メニューアイコン
+---------------------------------------------------------- */
+
+@media screen and ( max-width: 767px ) { // スマートフォン表示
+	.sp-global-menu-icon{
+		position: fixed;
+		right: 20px;
+		top: 15px;
+		z-index: 1100;
+		width: 30px;
+		height: 25px;
+		cursor: pointer;
+		transition: .35s $easeInOutCirc;
+	}
+	.sp-global-menu-icon div {position:relative}
+	.sp-global-menu-icon span {
+		display: block;
+		position: absolute;
+		width: 100%;
+		border-bottom: solid 1px $main-color;
+		-webkit-transition: .35s $easeInOutCirc;
+		-moz-transition: .35s $easeInOutCirc;
+		transition: .35s $easeInOutCirc;
+	}
+	.sp-global-menu-icon span:nth-child(1) {top:0}
+	.sp-global-menu-icon span:nth-child(2) {top:9px}
+	.sp-global-menu-icon span:nth-child(3) {top:18px}
+	.sp-global-menu-icon.is-open span:nth-child(1) {
+		top: 11px;
+		-webkit-transform: rotate(-45deg);
+		-moz-transform: rotate(-45deg);
+		transform: rotate(-45deg);
+	}
+	.sp-global-menu-icon.is-open span:nth-child(2),
+	.sp-global-menu-icon.is-open span:nth-child(3) {
+		top: 11px;
+		-webkit-transform: rotate(45deg);
+		-moz-transform: rotate(45deg);
+		transform: rotate(45deg)
+	}
+}
+
+@media screen and ( max-width: 767px ) { // スマートフォン表示
+	.sp-global-menu-bg {
+		opacity: 0;
+	}
+	.sp-global-menu-bg.is-open {
+		position: fixed;
+		top: 0;
+		left: 0;
+		z-index: 1010;
+		width: 100%;
+		height: 100%;
+		background: rgba($sub-color-2, .3);
+		opacity: 1;
+		backdrop-filter: blur(12px);
+	}
+}

@@ -1,0 +1,515 @@
+// 表示切り替え設定テンプレート
+// ---------------------------------------------------------- */
+// @media screen and ( min-width: 768px ) and ( max-width: 1023px ) { // タブレット / ポートレート表示のみ
+// @media screen and ( max-width: 767px ) { // スマートフォン表示
+// @media screen and ( max-width: 320px ) { // スマートフォンSE表示
+
+// CSS変数を設定
+// ---------------------------------------------------------- */
+
+$color-blue: #5d9ced;
+$color-green: #2dc6ba;
+$color-red: #f1374d;
+$text-color: #17252a;
+$main-color: #3aafa9;
+$main-color-2: #17252a;
+$sub-color: #2b7a78;
+$sub-color-2: #def2f1;
+
+
+$width-sidebar: 200;
+
+//Easing function https://easings.net/
+// ---------------------------------------------------------- */
+
+$easeInSine:     cubic-bezier(0.47,  0,     0.745, 0.715);
+$easeOutSine:    cubic-bezier(0.39,  0.575, 0.565, 1    );
+$easeInOutSine:  cubic-bezier(0.445, 0.05,  0.55,  0.95 );
+$easeInQuad:     cubic-bezier(0.55,  0.085, 0.68,  0.53 );
+$easeOutQuad:    cubic-bezier(0.25,  0.46,  0.45,  0.94 );
+$easeInOutQuad:  cubic-bezier(0.455, 0.03,  0.515, 0.955);
+
+$easeInCubic:    cubic-bezier(0.55,  0.055, 0.675, 0.19 );
+$easeOutCubic:   cubic-bezier(0.215, 0.61,  0.355, 1    );
+$easeInOutCubic: cubic-bezier(0.645, 0.045, 0.355, 1    );
+$easeInQuart:    cubic-bezier(0.895, 0.03,  0.685, 0.22 );
+$easeOutQuart:   cubic-bezier(0.165, 0.84,  0.44,  1    );
+$easeInOutQuart: cubic-bezier(0.77,  0,     0.175, 1    );
+
+$easeInQuint:    cubic-bezier(0.755, 0.05,  0.855, 0.06 );
+$easeOutQuint:   cubic-bezier(0.23,  1,     0.32,  1    );
+$easeInOutQuint: cubic-bezier(0.86,  0,     0.07,  1    );
+$easeInExpo:     cubic-bezier(0.95,  0.05,  0.795, 0.035);
+$easeOutExpo:    cubic-bezier(0.19,  1,     0.22,  1    );
+$easeInOutExpo:  cubic-bezier(1,     0,     0,     1    );
+
+$easeInCirc:     cubic-bezier(0.6,   0.04,  0.98,  0.335);
+$easeOutCirc:    cubic-bezier(0.075, 0.82,  0.165, 1    );
+$easeInOutCirc:  cubic-bezier(0.785, 0.135, 0.15,  0.86 );
+$easeInBack:     cubic-bezier(0.6,  -0.28,  0.735, 0.045);
+$easeOutBack:    cubic-bezier(0.175, 0.885, 0.32,  1.275);
+$easeInOutBack:  cubic-bezier(0.68, -0.55,	0.265, 1.55 );
+
+/*
+//
+//
+// 全体共通コンポーネント
+---------------------------------------------------------- */
+html {
+	font-size: 62.5%;
+}
+
+body {
+	background: #fff;
+	color: $main-color-2;
+	font-size: 1.6em;
+	font-family: 'Noto Sans JP', sans-serif;
+	line-height: 1.6;
+	-webkit-text-size-adjust: 100%;
+}
+
+@media screen and ( min-width: 768px ) and ( max-width: 1023px ) { // タブレット / ポートレート表示のみ
+	body {
+		font-size: 1.4em;
+	}
+}
+
+@media screen and ( max-width : 767px ) { // スマートフォン表示
+	body {
+		font-size: 1.4em;
+	}
+}
+
+a {
+	color: #fff;
+	text-decoration: underline;
+	&:hover {
+		text-decoration: none;
+	}
+}
+
+/*
+//
+//
+// 表示・非表示用クラス
+---------------------------------------------------------- */
+
+.is-pc {
+	display: block;
+}
+
+.is-sp {
+	display: none;
+}
+
+@media screen and ( min-width: 768px ) and ( max-width: 1023px ) { // タブレット / ポートレート表示のみ
+	.is-pc {
+		display: none;
+	}
+	.is-sp {
+		display: block;
+	}
+}
+
+@media screen and ( max-width : 767px ) { // スマートフォン表示
+	.is-pc {
+		display: none;
+	}
+	.is-sp {
+		display: block;
+	}
+}
+
+/*
+//
+//
+// ページャー
+---------------------------------------------------------- */
+
+.pager {
+	display: table;
+	margin: auto;
+	padding: 70px 0;
+	text-align: center;
+	border-collapse: separate;
+	border-spacing: 20px 0;
+	.page-numbers {
+		display: table-cell;
+		width: 40px;
+		height: 40px;
+		vertical-align: middle;
+		border: 1px solid $main-color;
+		border-radius: 50%;
+		color: $main-color;
+		text-decoration: none;
+		text-align: center;
+		transition: all .6s $easeInOutCirc;
+		&:hover {
+			background: $main-color;
+			color: #fff;
+		}
+		&.current {
+			background: $main-color;
+			color: #fff;
+		}
+		&.dots {
+			border: none;
+			&:hover {
+				border-color: none;
+				background: none;
+			}
+		}
+	}
+}
+
+@media screen and ( max-width : 767px ) { // スマートフォン表示
+	.pager {
+		border-spacing: 4px 0;
+		padding: 32px 0 32px;
+		&__numbers {
+			width: 30px;
+			height: 30px;
+		}
+	}
+}
+
+/*
+//
+//
+// パンくずリスト
+---------------------------------------------------------- */
+
+.breadcrumb {
+	position: fixed;
+	bottom: 0;
+	left: #{$width-sidebar}px;
+	z-index: 1000;
+	width: 100%;
+	background: #1b2128;
+	&__inner {
+		padding: 5px 10px;
+	}
+	ul {
+		display: flex;
+		list-style: none;
+	}
+	li{
+		color: rgba(255, 255, 255, .5);
+		font-size: 1.1rem;
+		&:not(:last-child)::after {
+			padding: 0 10px;
+			content: '>';
+		}
+	}
+	a {
+		color: rgba(255, 255, 255, .5);
+		font-size: 1.1rem;
+	}
+}
+
+@media screen and ( max-width: 767px ) { // スマートフォン表示
+	.breadcrumb {
+		left: 0;
+	}
+}
+
+/*
+//
+//
+// 関連記事
+---------------------------------------------------------- */
+
+.post-related {
+	padding-left: #{$width-sidebar}px;
+	&__inner {
+		max-width: 800px;
+		margin: auto;
+		padding: 0 4%;
+	}
+	&__title {
+		margin-bottom: 40px;
+	}
+}
+
+@media screen and ( max-width: 767px ) { // スマートフォン表示
+	.post-related {
+		padding-left: 0;
+		&__title {
+			margin-bottom: 20px;
+		}
+	}
+}
+
+.post-related-list {
+	display: flex;
+	flex-wrap: wrap;
+	list-style: none;
+	justify-content: space-between;
+	align-items: center;
+	&__item {
+		display: flex;
+		align-items: center;
+		width: 47%;
+		margin-bottom: 2%;
+	}
+	&__link {
+		color: $main-color-2;
+		text-decoration: none;
+		transition: all .4s $easeInOutCirc;
+		&:hover {
+			color: $main-color;
+		}
+	}
+	&__title {
+		font-size: 1.4rem;
+		word-break: break-all;
+	}
+	&__figure {
+		flex-basis: 15%;
+		margin-right: 3%;
+		border: 2px solid $main-color;
+	}
+	&__image-link {
+		display: block;
+		position: relative;
+		width: 100%;
+		padding-top: 100%;
+		overflow: hidden;
+		img {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			width: auto;
+			height: 100%;
+			min-height: 100%;
+			transform: translate(-50%, -50%) scale(1);
+			transition: all .4s $easeInOutCirc;
+			filter: grayscale(100%);
+			&:hover {
+				filter: grayscale(0);
+				transform: translate(-50%, -50%) scale(1.1);
+			}
+		}
+	}
+	&__info {
+		flex-basis: 77%;
+		font-feature-settings: 'palt';
+	}
+	&__date {
+		display: inline-block;
+		color: rgba($main-color-2, .7);
+		font-size: 1.2rem;
+	}
+}
+
+@media screen and ( max-width: 767px ) { // スマートフォン表示
+	.post-related-list {
+		display: flex;
+		flex-direction: column;
+		&__item {
+			width: 100%;
+			margin-bottom: 4%;
+		}
+	}
+}
+
+/*
+//
+//
+// コンタクトフォーム
+---------------------------------------------------------- */
+
+.contact {
+	&__note {
+		color: rgba($main-color-2, .7);
+		font-size: 1.2rem;
+	}
+}
+
+.contact-form{
+	width: 100%;
+	th {
+		vertical-align: top;
+		border-top: 1px solid $sub-color-2;
+		font-weight: 400;
+	}
+	td {
+		padding-bottom: 8px;
+		padding-left: 8px;
+	}
+	label {
+		display: block;
+		color: rgba($main-color-2, .7);
+		font-size: 1.4rem;
+	}
+	&__input-area{
+		box-sizing: border-box;
+		width: 100%;
+		padding: 16px;
+		border: 1px solid $sub-color-2;
+		border-radius: 4px;
+		background: none;
+		font-size: 1.5rem;
+		transition: border .4s ease;
+		resize: vertical;
+		&:focus{
+			border: 1px solid $main-color;
+			outline: none;
+		}
+	}
+}
+
+/*
+//
+//
+// アニメーション
+---------------------------------------------------------- */
+
+.animated {
+	-webkit-animation-duration: 1.5s;
+	animation-duration: 1.5s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+	transition-timing-function: $easeInOutCirc;
+	opacity: 0;
+}
+
+.animated.infinite {
+	-webkit-animation-iteration-count: infinite;
+	animation-iteration-count: infinite;
+}
+
+/* アニメーション　タイミングディレイ */
+
+.delay-02s {
+	animation-delay: 0.2s;
+}
+.delay-04s {
+	animation-delay: 0.4s;
+}
+.delay-06s {
+	animation-delay: 0.6s;
+}
+
+/* アニメーション　フェードイン */
+
+.fadeIn {
+	-webkit-animation-name: fadeIn;
+	animation-name: fadeIn;
+}
+
+@-webkit-keyframes fadeIn {
+	from {
+	 opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+/* アニメーション　左からフェードイン */
+
+.fadeInLeft {
+	-webkit-animation-name: fadeInLeft;
+	animation-name: fadeInLeft;
+}
+
+@-webkit-keyframes fadeInLeft {
+	from {
+		opacity: 0;
+		-webkit-transform: translate3d(-15%, 0, 0);
+		transform: translate3d(-15%, 0, 0);
+	}
+	to {
+		opacity: 1;
+		-webkit-transform: translate3d(0, 0, 0);
+		transform: translate3d(0, 0, 0);
+	}
+}
+
+@keyframes fadeInLeft {
+	from {
+		opacity: 0;
+		-webkit-transform: translate3d(-15%, 0, 0);
+		transform: translate3d(-15%, 0, 0);
+	}
+	to {
+		opacity: 1;
+		-webkit-transform: translate3d(0, 0, 0);
+		transform: translate3d(0, 0, 0);
+	}
+}
+
+/* アニメーション　右からフェードイン */
+
+.fadeInRight {
+	-webkit-animation-name: fadeInRight;
+	animation-name: fadeInRight;
+}
+
+@-webkit-keyframes fadeInRight {
+	from {
+		opacity: 0;
+		-webkit-transform: translate3d(15%, 0, 0);
+		transform: translate3d(15%, 0, 0);
+	}
+	to {
+		opacity: 1;
+		-webkit-transform: translate3d(0, 0, 0);
+		transform: translate3d(0, 0, 0);
+	}
+}
+@keyframes fadeInRight {
+	from {
+		opacity: 0;
+		-webkit-transform: translate3d(15%, 0, 0);
+		transform: translate3d(15%, 0, 0);
+	}
+	to {
+		opacity: 1;
+		-webkit-transform: translate3d(0, 0, 0);
+		transform: translate3d(0, 0, 0);
+	}
+}
+
+/* アニメーション　下からフェードイン */
+
+.fadeInUp {
+	-webkit-animation-name: fadeInUp;
+	animation-name: fadeInUp;
+}
+
+@-webkit-keyframes fadeInUp {
+	from {
+		opacity: 0;
+		-webkit-transform: translate3d(0, 50%, 0);
+		transform: translate3d(0, 50%, 0);
+	}
+	to {
+		opacity: 1;
+		-webkit-transform: translate3d(0, 0, 0);
+		transform: translate3d(0, 0, 0);
+	}
+}
+
+@keyframes fadeInUp {
+	from {
+		opacity: 0;
+		-webkit-transform: translate3d(0, 50%, 0);
+		transform: translate3d(0, 50%, 0);
+	}
+	to {
+		opacity: 1;
+		-webkit-transform: translate3d(0, 0, 0);
+		transform: translate3d(0, 0, 0);
+	}
+}
