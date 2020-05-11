@@ -1,9 +1,7 @@
-/*
-//
-//
-//
-// 記事詳細
----------------------------------------------------------- */
+
+/*--------------------------------------------------------------
+　記事詳細
+--------------------------------------------------------------*/
 
 .page-section {
 	margin-bottom: 80px;
@@ -18,7 +16,9 @@
 	}
 }
 
-@media screen and ( max-width: 767px ) { // スマートフォン表示
+/* スマートフォン表示 */
+
+@media screen and ( max-width: 767px ) {
 	.page-section {
 		padding-left: 0;
 	}
@@ -36,7 +36,9 @@
 	}
 }
 
-@media screen and ( max-width: 767px ) { // スマートフォン表示
+/* スマートフォン表示 */
+
+@media screen and ( max-width: 767px ) {
 	.page-header {
 		&__title {
 			font-size: 2.4rem;

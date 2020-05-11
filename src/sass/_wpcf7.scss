@@ -1,9 +1,7 @@
-/*
-//
-//
-//
-// コンタクトフォーム7
----------------------------------------------------------- */
+
+/*--------------------------------------------------------------
+　コンタクトフォーム7
+--------------------------------------------------------------*/
 
 div.wpcf7 {
 	margin: 0;
@@ -27,7 +25,7 @@ div.wpcf7-response-output {
 }
 
 div.wpcf7-mail-sent-ok {
-  color: $color-green;
+	color: $color-green;
 }
 
 div.wpcf7-mail-sent-ng,
@@ -53,7 +51,7 @@ span.wpcf7-not-valid-tip {
 	top: 20%;
 	left: 20%;
 	z-index: 100;
-  padding: .2em .8em;
+	padding: .2em .8em;
 	background: #fff;
 }
 
@@ -117,8 +115,8 @@ div.wpcf7 input[type="file"]:disabled {
 }
 
 .wpcf7-mail-sent-ok{
-  display: block;
-  padding: 40px 0;
+	display: block;
+	padding: 40px 0;
 	color: #1b1e1d;
 }
 
@@ -128,24 +126,24 @@ div.wpcf7 input[type="file"]:disabled {
 }
 
 .wpcf7-submit {
-  display: block;
-  width: 300px;
-  margin: auto;
-  padding: 10px;
-  border: none;
-  border-radius: 50px;
-  background: $main-color;
-  color: #fff;
-  font-size: 1.5rem;
-  text-align: center;
-  letter-spacing: 0.2em;
-  outline: none;
-  transition: all .6s $easeOutCirc;
+	display: block;
+	width: 300px;
+	margin: auto;
+	padding: 10px;
+	border: none;
+	border-radius: 50px;
+	background: $main-color;
+	color: #fff;
+	font-size: 1.5rem;
+	text-align: center;
+	letter-spacing: 0.2em;
+	outline: none;
+	transition: all .6s $easeOutCirc;
 
-  &:hover {
-    width: 330px;
-    border: 1px solid $main-color;
-    background: #fff;
-    color: $main-color;
-  }
+	&:hover {
+		width: 330px;
+		border: 1px solid $main-color;
+		background: #fff;
+		color: $main-color;
+	}
 }

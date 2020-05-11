@@ -1,13 +1,13 @@
 @charset "UTF-8";
 
-@import "reset"; //リセットCSS
+@import "reset";				//リセットCSS
 
-@import "common"; //共通
-@import "header"; //ヘッダー
-@import "footer"; //フッター
-@import "index"; //トップページ
-@import "single"; //記事詳細
-@import "page"; //固定ページ
-@import "sidebar"; //記事詳細
-@import "entry-content-style"; //記事詳細テンプレート
-@import "wpcf7"; //記事詳細
+@import "common";				//共通
+@import "header";				//ヘッダー
+@import "footer";				//フッター
+@import "index";				//トップページ
+@import "single";				//投稿ページ
+@import "page";					//固定ページ
+@import "sidebar";				//サイドバー
+@import "entry-content-style";	//記事詳細テンプレート
+@import "wpcf7";				//プラグイン / コンタクトフォーム7

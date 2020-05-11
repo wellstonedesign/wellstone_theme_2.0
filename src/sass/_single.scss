@@ -1,9 +1,7 @@
-/*
-//
-//
-//
-// 記事詳細
----------------------------------------------------------- */
+
+/*--------------------------------------------------------------
+　記事詳細
+--------------------------------------------------------------*/
 
 .single-section {
 	margin-bottom: 80px;
@@ -18,7 +16,9 @@
 	}
 }
 
-@media screen and ( max-width: 767px ) { // スマートフォン表示
+/* スマートフォン表示 */
+
+@media screen and ( max-width: 767px ) {
 	.single-section {
 		padding-left: 0;
 	}
@@ -37,7 +37,9 @@
 	}
 }
 
-@media screen and ( min-width: 768px ) and ( max-width: 1023px ) { // タブレット / ポートレート表示のみ
+/* タブレット / ポートレート表示のみ */
+
+@media screen and ( min-width: 768px ) and ( max-width: 1023px ) {
 	.single-header {
 		&__title {
 			padding-bottom: 10px;
@@ -47,7 +49,9 @@
 	}
 }
 
-@media screen and ( max-width: 767px ) { // スマートフォン表示
+/* スマートフォン表示 */
+
+@media screen and ( max-width: 767px ) {
 	.single-header {
 		&__title {
 			padding-bottom: 10px;

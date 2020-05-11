@@ -1,10 +1,7 @@
 
-
-/*
-//
-//
-// トップページ
----------------------------------------------------------- */
+/*--------------------------------------------------------------
+　トップページ
+--------------------------------------------------------------*/
 
 .index-section {
 	overflow: hidden;
@@ -16,7 +13,9 @@
 	}
 }
 
-@media screen and ( max-width : 767px ) { // スマートフォン表示
+/* スマートフォン表示 */
+
+@media screen and ( max-width : 767px ) {
 	.index-section {
 		padding-left: 0;
 	}
@@ -72,7 +71,9 @@
 	}
 }
 
-@media screen and ( max-width : 767px ) { // スマートフォン表示
+/* スマートフォン表示 */
+
+@media screen and ( max-width : 767px ) {
 	.index-post {
 		&__title {
 			padding: 0 48px 0 48px;
@@ -200,7 +201,9 @@
 	}
 }
 
-@media screen and ( max-width : 767px ) { // スマートフォン表示
+/* スマートフォン表示 */
+
+@media screen and ( max-width : 767px ) {
 	.index-post-list {
 		$this: &;
 		display: flex;
