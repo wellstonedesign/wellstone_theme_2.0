@@ -1,8 +1,21 @@
+<?php
+/**
+ * Theme single template
+ *
+ * Theme single for the theme.
+ *
+ * @package    WordPress
+ * @subpackage wellstone_theme
+ */
+
+?>
+
 		<?php get_header(); ?>
 		<main>
 			<article class="single-section">
 				<div class="single-section__inner">
-				<?php while ( have_posts() ) : the_post(); ?>
+				<?php while ( have_posts() ) : ?>
+					<?php the_post(); ?>
 					<header class="single-header">
 						<div class="single-header__inner">
 							<h1 class="single-header__title"><?php the_title(); ?></h1>

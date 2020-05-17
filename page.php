@@ -1,8 +1,21 @@
+<?php
+/**
+ * Theme page template
+ *
+ * Theme page for the theme.
+ *
+ * @package    WordPress
+ * @subpackage wellstone_theme
+ */
+
+?>
+
 		<?php get_header(); ?>
 		<main>
 			<article class="page-section">
 				<div class="page-section__inner">
-				<?php while ( have_posts() ) : the_post(); ?>
+				<?php while ( have_posts() ) : ?>
+					<?php the_post(); ?>
 					<header class="page-header">
 						<div class="page-header__inner">
 							<h1 class="page-header__title"><?php the_title(); ?></h1>

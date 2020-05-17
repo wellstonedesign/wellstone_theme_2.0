@@ -1,3 +1,15 @@
+<?php
+/**
+ * Theme footer
+ *
+ * Theme footer for the theme.
+ *
+ * @package    WordPress
+ * @subpackage wellstone_theme
+ */
+
+?>
+
 	<footer class="site-footer">
 		<div class="site-footer__inner">
 			<div class="sns-menu">
@@ -26,17 +38,19 @@
 				</ul>
 			</div>
 			<div class="site-footer__menu">
-				<?php wp_nav_menu( array('menu' => 'footer-nav', 'theme_location' => 'footer-nav')); ?>
+				<?php
+					wp_nav_menu(
+						array(
+							'menu'           => 'footer-nav',
+							'theme_location' => 'footer-nav',
+						)
+					);
+					?>
 			</div>
 			<p class="site-footer__copy">&copy; WELLSTONE.design All Rights Reserved.</p>
 		</div>
 	</footer>
 <?php get_sidebar(); ?>
-<script src="<?php theme_get_parent_theme_url() ?>/assets/js/jquery-3.4.1.min.js"></script>
-<script src="<?php theme_get_parent_theme_url() ?>/assets/js/jquery.easing.1.3.js"></script>
-<script src="<?php theme_get_parent_theme_url() ?>/assets/js/jquery.inview.min.js"></script>
-<script src="<?php theme_get_parent_theme_url() ?>/assets/js/jquery.main.js"></script>
-<script src="<?php theme_get_parent_theme_url() ?>/assets/js/main.js"></script>
 <?php wp_footer(); ?>
 </body>
 </html>

@@ -1,10 +1,17 @@
 <?php
+/**
+ * Theme functions
+ *
+ * ヘッダー出力カスタマイズ
+ *
+ * @package    WordPress
+ * @subpackage wellstone_theme
+ */
 
 /**
  *
  * ヘッダーの不要なタグを削除
  */
-
 remove_action( 'wp_head', 'wp_generator' );
 remove_action( 'wp_head', 'rel_canonical' );
 remove_action( 'wp_head', 'wp_shortlink_wp_head' );
@@ -28,27 +35,44 @@ remove_action( 'wp_head', 'wp_oembed_add_discovery_links' );
 remove_action( 'wp_head', 'wp_oembed_add_host_js' );
 
 /* contact-form-7のCSSを削除 */
-add_action( 'wp_enqueue_scripts', function() {
-	wp_dequeue_style( 'contact-form-7' );
-});
+add_action(
+	'wp_enqueue_scripts',
+	function() {
+		wp_dequeue_style( 'contact-form-7' );
+	}
+);
 
 /**
  *
  * [type='text/javascript']を削除し、[async='async']を付与
+ *
+ * @param array $tag .
  */
-
-function remove_script_type($tag) {
-	return str_replace("type='text/javascript'", "async='async'", $tag);
+function remove_script_type( $tag ) {
+	return str_replace( "type='text/javascript'", "async='async'", $tag );
 }
-add_filter('script_loader_tag','remove_script_type');
+add_filter( 'script_loader_tag', 'remove_script_type' );
 
 /**
  *
  * [type='text/css']を削除
+ *
+ * @param array $tag .
  */
-
-function remove_style_type($tag) {
-	$tag = preg_replace( array( "| type='.+?'s*|","| id='.+?'s*|", '| />|' ), array( ' ',' ', '>' ), $tag );
+function remove_style_type( $tag ) {
+	$tag = preg_replace(
+		array(
+			"| type='.+?'s*|",
+			"| id='.+?'s*|",
+			'| />|',
+		),
+		array(
+			' ',
+			' ',
+			'>',
+		),
+		$tag
+	);
 	return $tag;
 }
-add_filter('style_loader_tag','remove_style_type');
+add_filter( 'style_loader_tag', 'remove_style_type' );

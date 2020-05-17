@@ -1,3 +1,14 @@
+<?php
+/**
+ * Theme index
+ *
+ * Theme index for the theme.
+ *
+ * @package    WordPress
+ * @subpackage wellstone_theme
+ */
+
+?>
 		<?php get_header(); ?>
 		<div class="mainvisual"></div>
 		<main>
@@ -8,7 +19,7 @@
 							<header class="index-post__header animated" data-animate="fadeIn">
 								<h2 class="index-post__title">LATEST POSTS</h2>
 							</header>
-							<?php get_template_part('templates/loop'); ?>
+							<?php get_template_part( 'templates/loop' ); ?>
 						</div>
 					</article>
 				</div>
