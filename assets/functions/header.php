@@ -10,6 +10,82 @@
 
 /**
  *
+ * スクリプトファイルの読み込み
+ */
+function theme_enqueue_scripts() {
+	// WordPress本体のjquery.jsを読み込まない.
+	wp_deregister_script( 'jquery' );
+
+	wp_enqueue_script(
+		'jquery',
+		get_template_directory_uri() . '/assets/js/jquery-3.4.1.min.js',
+		'',
+		'1.1',
+		'true',
+	);
+	wp_enqueue_script(
+		'jquery_easing',
+		get_template_directory_uri() . '/assets/js/jquery.easing.1.3.js',
+		'jquery',
+		'1.1',
+		'true',
+	);
+	wp_enqueue_script(
+		'jquery_inview',
+		get_template_directory_uri() . '/assets/js/jquery.inview.min.js',
+		'jquery',
+		'1.1',
+		'true',
+	);
+	wp_enqueue_script(
+		'jquery_main',
+		get_template_directory_uri() . '/assets/js/jquery.main.js',
+		array(
+			'jquery',
+			'jquery_easing',
+			'jquery_inview',
+		),
+		'1.1',
+		'true',
+	);
+	wp_enqueue_script(
+		'lazyload',
+		get_template_directory_uri() . '/assets/js/lazysizes.min.js',
+		'',
+		'1.1',
+		'true',
+	);
+}
+add_action( 'wp_enqueue_scripts', 'theme_enqueue_scripts' );
+
+/**
+ *
+ * スタイルファイルの読み込み
+ */
+function theme_enqueue_styles() {
+	wp_enqueue_style(
+		'style',
+		get_template_directory_uri() . '/assets/css/style.css',
+		'',
+		'1.1',
+	);
+	wp_enqueue_style(
+		'font_noto',
+		'https://fonts.googleapis.com/css?family=Noto+Sans+JP:300,400,500&display=swap&subset=japanese',
+		'',
+		'1.1',
+	);
+	wp_enqueue_style(
+		'font_barlow',
+		'https://fonts.googleapis.com/css2?family=Barlow+Condensed&display=swap',
+		'',
+		'1.1',
+	);
+}
+add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );
+
+/**
+ *
  * ヘッダーの不要なタグを削除
  */
 remove_action( 'wp_head', 'wp_generator' );
