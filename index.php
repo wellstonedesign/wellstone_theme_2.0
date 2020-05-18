@@ -16,7 +16,7 @@
 				<div class="index-section__inner">
 					<article class="index-post">
 							<div class="index-post__inner">
-							<header class="index-post__header animated" data-animate="fadeIn">
+							<header class="index-post__header">
 								<h2 class="index-post__title">LATEST POSTS</h2>
 							</header>
 							<?php get_template_part( 'templates/loop' ); ?>

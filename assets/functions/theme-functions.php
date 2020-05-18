@@ -57,6 +57,13 @@ function theme_enqueue_scripts() {
 		'1.1',
 		'true',
 	);
+	wp_enqueue_script(
+		'lazyload',
+		get_template_directory_uri() . '/assets/js/lazysizes.min.js',
+		'',
+		'1.1',
+		'true',
+	);
 }
 add_action( 'wp_enqueue_scripts', 'theme_enqueue_scripts' );
 
@@ -243,9 +250,11 @@ function theme_get_child_theme_url() {
  */
 function theme_the_thumbnail() {
 	if ( has_post_thumbnail() ) {
-		the_post_thumbnail( 'thumbnail-large' );
+		global $post;
+		$thumbnail_url = get_the_post_thumbnail_url( $post->ID, 'thumbnail' );
+		echo '<img class="lazyload" data-src="' . esc_url( $thumbnail_url ) . '" alt="">';
 	} else {
-		echo '<img src="' . esc_url( theme_get_the_post_thumbnail_url() ) . '" alt="" />';
+		echo '<img class="lazyload" data-src="' . esc_url( theme_get_the_post_thumbnail_url() ) . '" alt="">';
 	}
 }
 

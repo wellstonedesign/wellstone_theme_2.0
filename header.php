@@ -33,7 +33,7 @@
 		<div class="site-header__inner">
 			<div class="site-logo">
 				<a href="<?php bloginfo( 'url' ); ?>">
-					<img src="<?php theme_get_parent_theme_url(); ?>/assets/img/logo_wellstone.svg" alt="WELLSTONE.design">
+					<img class="lazyload" data-src="<?php theme_get_parent_theme_url(); ?>/assets/img/logo_wellstone.svg" alt="WELLSTONE.design">
 				</a>
 			</div>
 			<?php if ( is_front_page() ) : ?>

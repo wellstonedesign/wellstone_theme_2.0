@@ -14,10 +14,10 @@
 								<?php while ( have_posts() ) : ?>
 									<?php the_post(); ?>
 									<li class="index-post-list__item">
-										<figure class="index-post-list__figure animated" data-animate="fadeInLeft">
+										<figure class="index-post-list__figure">
 											<a class="index-post-list__image-link" href="<?php the_permalink( '' ); ?>"><?php theme_the_thumbnail(); ?></a>
 										</figure>
-										<div class="index-post-list__info animated" data-animate="fadeInRight">
+										<div class="index-post-list__info">
 											<time class="index-post-list__date" datetime="<?php the_time( 'Y-m-d' ); ?>"><?php the_time( 'Y.m.d' ); ?></time>
 											<div class="index-post-list__category"><?php the_category(); ?></div>
 											<h3 class="index-post-list__title"><a class="index-post-list__link" href="<?php the_permalink( '' ); ?>"><?php echo esc_html( wp_trim_words( get_the_title(), 60, '...' ) ); ?></a></h3>
