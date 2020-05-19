@@ -19,9 +19,7 @@
 <meta name="author" content="WELLSTONE.design">
 <link rel="canonical" href="https://wellstone.design">
 
-/**
- * Global site tag (gtag.js) - Google Analytics
- */
+<!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-145153086-1"></script>
 <script>
 window.dataLayer = window.dataLayer || [];
