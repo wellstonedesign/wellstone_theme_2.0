@@ -120,12 +120,12 @@ add_action(
 
 /**
  *
- * [type='text/javascript']を削除し、[async='async']を付与
+ * [type='text/javascript']を削除し、[defer]を付与
  *
  * @param array $tag .
  */
 function remove_script_type( $tag ) {
-	return str_replace( "type='text/javascript'", "async='async'", $tag );
+	return str_replace( "type='text/javascript'", 'defer', $tag );
 }
 add_filter( 'script_loader_tag', 'remove_script_type' );
 
