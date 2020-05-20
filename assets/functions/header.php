@@ -55,6 +55,13 @@ function theme_enqueue_scripts() {
 		'1.1',
 		'true',
 	);
+	wp_enqueue_script(
+		'prism',
+		get_template_directory_uri() . '/assets/js/prism.js',
+		'',
+		'1.1',
+		'true',
+	);
 }
 add_action( 'wp_enqueue_scripts', 'theme_enqueue_scripts' );
 
