@@ -74,17 +74,11 @@ function theme_enqueue_styles() {
 		'style',
 		get_template_directory_uri() . '/assets/css/style.css',
 		'',
-		'1.1',
-	);
-	wp_enqueue_style(
-		'font_noto',
-		'https://fonts.googleapis.com/css?family=Noto+Sans+JP:300,400,500&display=swap&subset=japanese',
-		'',
-		'1.1',
+		'1.2',
 	);
 	wp_enqueue_style(
 		'font_barlow',
-		'https://fonts.googleapis.com/css2?family=Barlow+Condensed&display=swap',
+		'https://fonts.googleapis.com/css2?family=Barlow+Condensed&text=ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789&display=swap',
 		'',
 		'1.1',
 	);

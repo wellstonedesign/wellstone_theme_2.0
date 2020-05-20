@@ -167,9 +167,9 @@ function theme_the_thumbnail() {
 	if ( has_post_thumbnail() ) {
 		global $post;
 		$thumbnail_url = get_the_post_thumbnail_url( $post->ID, 'thumbnail' );
-		echo '<img class="lazyload" data-src="' . esc_url( $thumbnail_url ) . '" alt="">';
+		echo '<img class="lazyload" data-src="' . esc_url( $thumbnail_url ) . '" alt="' . esc_html( get_the_title() ) . '">';
 	} else {
-		echo '<img class="lazyload" data-src="' . esc_url( theme_get_the_post_thumbnail_url() ) . '" alt="">';
+		echo '<img class="lazyload" data-src="' . esc_url( theme_get_the_post_thumbnail_url() ) . '" alt="' . esc_html( get_the_title() ) . '">';
 	}
 }
 
