@@ -9,7 +9,7 @@
  */
 
 ?>
-
+	<?php get_sidebar(); ?>
 	<footer class="site-footer">
 		<div class="site-footer__inner">
 			<div class="sns-menu">
@@ -50,7 +50,6 @@
 			<p class="site-footer__copy">&copy; WELLSTONE.design All Rights Reserved.</p>
 		</div>
 	</footer>
-<?php get_sidebar(); ?>
 <?php wp_footer(); ?>
 </body>
 </html>
