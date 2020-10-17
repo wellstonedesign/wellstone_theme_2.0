@@ -41,6 +41,7 @@
 	}
 	img {
 		max-width: 100%;
+		height: auto;
 	}
 	figcaption {
 		color: #666;
@@ -55,7 +56,7 @@
 			text-decoration: none;
 		}
 	}
-	ul,
+	ul:not(.blocks-gallery-grid),
 	ol {
 		padding-left: 20px;
 	}

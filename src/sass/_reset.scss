@@ -94,9 +94,12 @@ hr {
 	padding: 0;
 }
 
-input, select {
-	vertical-align: middle;
-}
 img{
 	vertical-align: bottom;
+}
+
+input[type="text"],
+input[type="submit"],
+textarea {
+	-webkit-appearance: none;
 }
