@@ -17,7 +17,7 @@ function theme_enqueue_scripts() {
 		'main',
 		get_template_directory_uri() . '/assets/js/main.js',
 		'',
-		'1.1',
+		filemtime( get_theme_file_path( '/assets/js/main.js' ) ),
 		'true',
 	);
 	wp_enqueue_script(
@@ -46,7 +46,7 @@ function theme_enqueue_styles() {
 		'style',
 		get_template_directory_uri() . '/assets/css/style.css',
 		'',
-		'1.2',
+		gmdate( 'Ymd/Hi', filemtime( get_theme_file_path( '/assets/css/style.css' ) ) ),
 	);
 	wp_enqueue_style(
 		'font_barlow',

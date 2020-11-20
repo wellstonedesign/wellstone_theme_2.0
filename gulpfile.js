@@ -14,6 +14,8 @@ const mozjpeg = require( 'imagemin-mozjpeg' );
 const pngquant = require( 'imagemin-pngquant' );
 const changed = require( 'gulp-changed' );
 
+// タイムスタンププラグインの読み込み
+const touch = require('gulp-touch-cmd');
 
 //画像の圧縮
 const compressImage = () =>
@@ -32,7 +34,8 @@ const compileSass = () =>
 	src( './src/sass/*.scss' )// style.scssファイルを取得
 	.pipe( sass( { outputStyle: 'compressed' } ) )// コンパイル後のCSSを展開
 	.pipe( autoprefixer( { cascade: false } ) )
-	.pipe( dest( './assets/css' ) );// cssフォルダー以下に保存
+	.pipe( dest( './assets/css' ) )// cssフォルダー以下に保存
+	.pipe( touch() );// タイムスタンプ更新
 
 
 // 監視
