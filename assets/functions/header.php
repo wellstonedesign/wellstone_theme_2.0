@@ -13,38 +13,10 @@
  * スクリプトファイルの読み込み
  */
 function theme_enqueue_scripts() {
-	// WordPress本体のjquery.jsを読み込まない.
-	wp_deregister_script( 'jquery' );
-
 	wp_enqueue_script(
-		'jquery',
-		get_template_directory_uri() . '/assets/js/jquery-3.4.1.min.js',
+		'main',
+		get_template_directory_uri() . '/assets/js/main.js',
 		'',
-		'1.1',
-		'true',
-	);
-	wp_enqueue_script(
-		'jquery_easing',
-		get_template_directory_uri() . '/assets/js/jquery.easing.1.3.js',
-		'jquery',
-		'1.1',
-		'true',
-	);
-	wp_enqueue_script(
-		'jquery_inview',
-		get_template_directory_uri() . '/assets/js/jquery.inview.min.js',
-		'jquery',
-		'1.1',
-		'true',
-	);
-	wp_enqueue_script(
-		'jquery_main',
-		get_template_directory_uri() . '/assets/js/jquery.main.js',
-		array(
-			'jquery',
-			'jquery_easing',
-			'jquery_inview',
-		),
 		'1.1',
 		'true',
 	);
